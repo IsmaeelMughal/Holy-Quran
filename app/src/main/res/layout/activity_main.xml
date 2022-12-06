@@ -21,15 +21,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="@integer/material_motion_duration_long_1"
-            android:text="Surah Number" />
+            android:text="Surah Number"
+            />
 
         <EditText
-            android:id="@+id/editTextNumber3"
+            android:id="@+id/surahNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="@integer/material_motion_duration_long_1"
             android:ems="10"
-            android:inputType="number" />
+            android:inputType="number"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -50,6 +52,7 @@
             android:text="Verse Number" />
 
         <EditText
+            android:id="@+id/verseNumberTextview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="@integer/material_motion_duration_long_1"
@@ -58,7 +61,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/verseDisplayBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -69,12 +72,14 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <TextView
+        android:id="@+id/verseTextview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:textSize="25dp"
+        android:fontFamily="@font/noorehuda_regular"
         android:text="اَلۡحَمۡدُ لِلّٰہِ رَبِّ الۡعٰلَمِیۡنَ ۙ﴿۱﴾"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        android:textSize="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/verseDisplayBtn"
         tools:layout_editor_absoluteX="0dp" />
 
 
