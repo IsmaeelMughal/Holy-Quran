@@ -50,15 +50,6 @@ public class MainActivity extends AppCompatActivity {
                             verseText.setText("سورہ 114 سے زیادہ نہیں ہو سکتی");
                         }
                         else{
-                            System.out.print("===============SSSSSSSSSSSSSSSSSSSSSSSSSSSS==============\n");
-                            System.out.print(verse);
-                            System.out.print("===============DDDDDDDDDDDDDDDDDDDDDD==============\n");
-
-                            System.out.print(surah);
-                            System.out.print("===============BBBBBBBBBBBBBBBBBBBBBBBBBBBB==============\n");
-
-                            System.out.print(indexes.surahAyatCount[4]);
-                            System.out.print("==============VVVVVVVVVVVVVVVVVVVVVVVVVVVVV===============\n");
                             if(verse > indexes.getSurahVerses(surah-1)){
                                 verseText.setText("سورہ "+ indexes.urduSurahNames[surah-1] +" میں صرف "+ indexes.surahAyatCount[surah-1] +" آیات ہیں۔");
                             }
