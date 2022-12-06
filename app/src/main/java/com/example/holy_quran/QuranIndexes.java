@@ -151,7 +151,7 @@ public class QuranIndexes {
             6342,
     };
     public int[] surahAyatCount = {
-            7,
+            6,
             286,
             200,
             176,

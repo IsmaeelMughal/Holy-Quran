@@ -9,8 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    QuranIndexes indexes;
-    QuranArabicText arabicText;
+    QuranIndexes indexes = new QuranIndexes();
+    QuranArabicText arabicText = new QuranArabicText();
 
     EditText surahNumberText;
     EditText verseNumberText;
@@ -34,7 +34,42 @@ public class MainActivity extends AppCompatActivity {
         displayBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (surahNumberText.getText().toString().equals("")
+                        || verseNumberText.getText().toString().equals("")){
+                    verseText.setText("سورہ یا آیت نمبر خالی نہیں ہو سکتی");
+                }
+                else{
+                    surah = Integer.parseInt(surahNumberText.getText().toString());
+                    verse = Integer.parseInt(verseNumberText.getText().toString());
 
+                    if (surah == 0 || verse == 0){
+                        verseText.setText("سورہ یا آیت صفر نہیں ہو سکتی");
+                    }
+                    else{
+                        if(surah > 114){
+                            verseText.setText("سورہ 114 سے زیادہ نہیں ہو سکتی");
+                        }
+                        else{
+                            System.out.print("===============SSSSSSSSSSSSSSSSSSSSSSSSSSSS==============\n");
+                            System.out.print(verse);
+                            System.out.print("===============DDDDDDDDDDDDDDDDDDDDDD==============\n");
+
+                            System.out.print(surah);
+                            System.out.print("===============BBBBBBBBBBBBBBBBBBBBBBBBBBBB==============\n");
+
+                            System.out.print(indexes.surahAyatCount[4]);
+                            System.out.print("==============VVVVVVVVVVVVVVVVVVVVVVVVVVVVV===============\n");
+                            if(verse > indexes.getSurahVerses(surah-1)){
+                                verseText.setText("سورہ "+ indexes.urduSurahNames[surah-1] +" میں صرف "+ indexes.surahAyatCount[surah-1] +" آیات ہیں۔");
+                            }
+                            else
+                            {
+                                String ayat = arabicText.QuranArabicText[indexes.SSP[surah-1] + verse - 1];
+                                verseText.setText(ayat);
+                            }
+                        }
+                    }
+                }
             }
         });
 
