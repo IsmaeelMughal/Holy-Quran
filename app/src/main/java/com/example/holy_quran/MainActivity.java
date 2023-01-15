@@ -2,6 +2,8 @@ package com.example.holy_quran;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     Button displayBtn;
     TextView verseText;
 
+    Button gitBtn;
+
 
     int surah;
     int verse;
@@ -30,6 +34,17 @@ public class MainActivity extends AppCompatActivity {
         verseNumberText = findViewById(R.id.verseNumberTextview);
         displayBtn = findViewById(R.id.verseDisplayBtn);
         verseText = findViewById(R.id.verseTextview);
+        gitBtn = findViewById(R.id.gitBtn);
+
+        gitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://github.com/IsmaeelMughal/Holy-Quran/commits/master";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
 
         displayBtn.setOnClickListener(new View.OnClickListener() {
             @Override
